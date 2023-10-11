@@ -1,0 +1,31 @@
+body{
+    margin:0;
+}
+
+div.resume{
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100%;
+    background-color: whitesmoke; 
+    /* #eff2f9; */
+    display: block;
+    z-index: 1;
+    overflow: auto;
+
+}
+div.resume div.file{
+    width: 900px;
+    height:1272.5px;
+    background-color: white;
+    z-index: 2;
+    border-radius: 6px;
+    margin-block:30px;
+    margin-inline:auto;
+    box-shadow: 0 20px 60px 0 rgba(186,200,227,.1), 0 16px 36px 0 rgba(186,200,227,.3);
+}
+div.resume div.file img{
+    width: 100%;
+    cursor:pointer;
+}
