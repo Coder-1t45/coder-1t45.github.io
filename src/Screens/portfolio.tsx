@@ -1,20 +1,39 @@
+import { useEffect, useState } from "react";
 import "./portfolio.css";
 
+function dateDiff(startDate: Date, endDate: Date): string {
+    const diffInMilliseconds = Math.abs(endDate.getTime() - startDate.getTime());
+
+    const days = Math.floor(diffInMilliseconds / (24 * 60 * 60 * 1000));
+    const hours = Math.floor((diffInMilliseconds % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
+    const minutes = Math.floor((diffInMilliseconds % (60 * 60 * 1000)) / (60 * 1000));
+    const seconds = Math.floor((diffInMilliseconds % (60 * 1000)) / 1000);
+    const milliseconds = diffInMilliseconds % 1000;
+
+    const formattedHours = hours.toString().padStart(2, "0");
+    const formattedMinutes = minutes.toString().padStart(2, "0");
+    const formattedSeconds = seconds.toString().padStart(2, "0");
+    const formattedMilliseconds = milliseconds.toString().padStart(3, "0");
+
+    return `${days} DAYS ${formattedHours}:${formattedMinutes}:${formattedSeconds}.${formattedMilliseconds}`;
+}
 function App() {
+    const date = new Date(2024, 6, 1, 18, 0, 0, 0);
+    const [curDate, SetDate] = useState<Date>(new Date());
+    useEffect(() => {
+        function animation() {
+            requestAnimationFrame(animation);
+
+            SetDate(new Date());
+        }
+        requestAnimationFrame(animation);
+    }, []);
     return (
         <main className="center middle">
-            <header>
-                <h1>Do <span style={{fontFamily:"monospace"}} >I</span> need Portfolio?</h1>
-            </header>
-            <div className="separator">
-                <span style={{ fontFamily: "monospace", fontSize: 20, color: "var(--blue)" }}>What</span>
-            </div>
-            <article>
-                <p>"A portfolio is a compilation of academic and professional materials that exemplifies your beliefs, skills, qualifications, education,
-                training, and experiences. It provides insight into your personality and work ethic."</p>
-                <p data-a onClick={()=>{document.location.href = "https://clarke.edu/academics/careers-internships/student-checklist/resume-writing-and-portfolios/what-is-a-portfolio/"}}>Clarke University</p>
-            </article>
-           <center> <h3>If I will ever need to Write a Portfolio,<br/> this Will be the Site.</h3></center>
+            <center>
+                <h1 style={{ fontSize: 40, marginBottom: 0, fontWeight: 400, letterSpacing: 2 }}>THE TIME WILL COME</h1>
+                <h1 style={{ fontSize: 60, marginTop: 0 }}>{dateDiff(date, curDate)}</h1>
+            </center>
         </main>
     );
 }

@@ -67,7 +67,7 @@ function App() {
                 </div>
             </main>
             <footer>
-                <h4 onClick={()=>{document.location.href="https://github.com/Coder-1t45"}}>@coder-1t45 3:12</h4>
+                <h4 onClick={()=>{document.location.href="https://github.com/Coder-1t45"}}>@coder-1t45</h4>
             </footer>
         </>
     );
