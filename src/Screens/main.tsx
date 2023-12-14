@@ -34,19 +34,31 @@ function App() {
             <main className="center middle">
                 <header>
                     <h1>Itay Layzerovich</h1>
-                    <h4 onClick={()=>{
-                        document.location.href = "/Resume"
-                    }}>resume</h4>
+                    <h4
+                        onClick={() => {
+                            document.location.href = "/Resume";
+                        }}
+                    >
+                        resume
+                    </h4>
                     <hr />
-                    <h4 onClick={()=>{
-                        document.location.href = "/Portfolio"
-                    }}>portfolio</h4>
+                    <h4
+                        onClick={() => {
+                            document.location.href = "/Portfolio";
+                        }}
+                    >
+                        portfolio
+                    </h4>
                 </header>
                 <div className="separator">
                     <span style={{ fontFamily: "monospace", fontSize: 20, color: "var(--blue)" }}>IO Games</span>
                 </div>
                 <div className="games">
-                    <Game  style={{border:"2px solid green", boxSizing:"border-box"}} color="#10732a" link="https://coder-1t45.github.io/Monopoly/">
+                    <Game
+                        style={{ border: "2px solid green", boxSizing: "border-box" }}
+                        color="#10732a"
+                        link="https://coder-1t45.github.io/Monopoly/"
+                    >
                         <span style={{ fontFamily: "Josefin Sans", fontWeight: 500 }}>MONOPOLY</span>
                     </Game>
                     <Game color="#0f0f0f" link="https://coder-1t45.github.io/Trivia.IO/">
@@ -64,10 +76,28 @@ function App() {
                             Donald
                         </p>
                     </Game>
+                    <Game
+                        style={{
+                            backgroundImage: "url(green500x500.png)",
+                            backgroundOrigin: "center center",
+                            backgroundSize: "contain",
+                        }}
+                        link="https://coder-1t45.github.io/Poker/"
+                    >
+                        <p style={{ fontFamily: "monospace", fontWeight: 900, scale: "1.2", translate: "20px" }} className="poker">
+                            <img src="cards.png" style={{ width: "auto", translate: "-40px" }} /> POKER
+                        </p>
+                    </Game>
                 </div>
             </main>
             <footer>
-                <h4 onClick={()=>{document.location.href="https://github.com/Coder-1t45"}}>@coder-1t45</h4>
+                <h4
+                    onClick={() => {
+                        document.location.href = "https://github.com/Coder-1t45";
+                    }}
+                >
+                    @coder-1t45
+                </h4>
             </footer>
         </>
     );
